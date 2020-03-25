@@ -3,6 +3,7 @@ package largestSumContiguousSubArray;
 /*
  * 
  * This is called Kidane's algorithm
+ * Time Complexity: O(n)
  */
 
 public class LargestContiugousSubarray {
