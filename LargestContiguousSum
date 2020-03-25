@@ -1,0 +1,34 @@
+package largestSumContiguousSubArray;
+
+/*
+ * 
+ * This is called Kidane's algorithm
+ */
+
+public class LargestContiugousSubarray {
+
+	public static int largestSum(int[] arr) {
+		int max_sum_till_now = 0;
+		int max_sum_updated = 0;
+
+		for (int i = 0; i < arr.length; i++) {
+			max_sum_till_now = max_sum_till_now + arr[i];
+			if (max_sum_updated < max_sum_till_now) {
+				max_sum_updated = max_sum_till_now;
+			}
+			if (max_sum_till_now < 0) {
+				max_sum_till_now = 0;
+			}
+
+		}
+		return max_sum_updated;
+	}
+
+	public static void main(String[] args) {
+
+		int[] arr = { -2, -3, 4, -1, -2, 1, 5, -3 };
+
+		System.out.println(largestSum(arr));
+	}
+
+}
